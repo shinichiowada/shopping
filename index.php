@@ -35,8 +35,11 @@ do {
         $price = $price - $goods;
     }
 
+    if ($price <= 0)
+        break;
+
     echo "残高は{$price}円です。" . PHP_EOL;
-} while ($price >= 0);
+} while ($price > 0);
 
 echo "チャージ金額を上回るため購入できません。" . PHP_EOL . "買い物を終了します。" . PHP_EOL;
 exit;
