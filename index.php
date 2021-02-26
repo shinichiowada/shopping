@@ -21,7 +21,7 @@ switch ($msg) {
         break;
 
     default:
-        echo "無効な番号です" . PHP_EOL . "処理を終了します。" . PHP_EOL . "買い物を終了します。" . PHP_EOL;
+        echo "無効な番号です" . PHP_EOL . "処理を終了します。" . PHP_EOL . "買い物を終了します。";
         exit;
 
         $flag = true;
@@ -34,9 +34,8 @@ do {
     if (isset($price)) {
         $price = $price - $goods;
     }
-
-    if ($price <= 0)
-        break;
+    if ($price <= 0) {
+    }
 
     echo "残高は{$price}円です。" . PHP_EOL;
 } while ($price > 0);
