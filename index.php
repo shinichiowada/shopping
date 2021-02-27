@@ -29,16 +29,12 @@ switch ($msg) {
 
 do {
     echo "商品の価格を入力して下さい:";
+
     $goods = trim(fgets(STDIN));
 
-    if (isset($price)) {
-        $price = $price - $goods;
-    }
-    if ($price <= 0) {
-    }
+    $price = $price - $goods;
 
     echo "残高は{$price}円です。" . PHP_EOL;
-} while ($price > 0);
+} while ($price >= 0);
 
 echo "チャージ金額を上回るため購入できません。" . PHP_EOL . "買い物を終了します。" . PHP_EOL;
-exit;
