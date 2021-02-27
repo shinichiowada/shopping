@@ -22,24 +22,24 @@ switch ($msg) {
 
     default:
         echo "無効な番号です" . PHP_EOL . "処理を終了します。" . PHP_EOL . "買い物を終了します。";
-        $flag = true;
         exit;
 }
+
+$flag = true;
 
 do {
     echo "商品の価格を入力して下さい:";
 
     $goods = trim(fgets(STDIN));
 
-    $price = $price - $goods;
+    // $price = $price - $goods;
 
-    $flag = true;
-
-    if ($price >= 0) {
-    } else {
+    // 残高が商品の代金を上回っていれば、true/残高が商品の代金と同じもしくは下回ったらfalse
+    if ($price = $price - $goods < 0) {
         $flag = false;
         echo "チャージ金額を上回るため購入できません。" . PHP_EOL . "買い物を終了します。" . PHP_EOL;
         exit;
+    } else {
+        echo "残高は{$price}円です。" . PHP_EOL;
     }
-    echo "残高は{$price}円です。" . PHP_EOL;
 } while ($price >= 0);
