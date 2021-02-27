@@ -34,8 +34,6 @@ do {
 
     if ($price >= $goods) {
 
-        $flag == true;
-
         $price = $price - $goods;
 
         echo "残高は{$price}円です。" . PHP_EOL;
